@@ -1,5 +1,7 @@
 from django.db import models
 
+from django.urls import reverse
+
 class Category(models.Model):
     name = models.CharField(max_length=100, db_index= True)#db_index?! Используется к параметру, к которому часто применяется сортировка
     slug = models.SlugField(max_length=100, unique=True)
@@ -11,6 +13,10 @@ class Category(models.Model):
 
     def __str__(self):#Определяет как будет отображаться элемент, здесь в админке
         return self.name
+    
+    def get_absolute_url(self):
+        return reverse("main:product_list_by_category", kwargs={"pk": self.pk})
+    
     
 
 class Product (models.Model):

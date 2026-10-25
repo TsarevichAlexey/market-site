@@ -1,0 +1,26 @@
+<!--подгружает статические файлы со стилями, js и изображения-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title %} {%endblock title %}</title>
+
+    <link rel="stylesheet" href='style.css'>
+</head>
+<body>
+    <header class="head_logo"> 
+        <img class="part_head" src="{% static 'photo/logo.png'%}" alt="logo" title='logo'>
+        <h1 class="part_head">КИРПИЧ<br>ДЛЯ ЛЮДЕЙ</h1>
+    </header>
+
+    <a href="{% url "main:product_list" %}">Логотип</a>
+    <!--Находит url маршрут с именем и подставляет его адрес-->
+    <!--В данном случае ищет urls.py приложения-->
+    
+    <!--от base пошло-->
+    Это база
+    {% block content %}{% endblock content %}
+</body>
+</html>

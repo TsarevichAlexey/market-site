@@ -1,0 +1,9 @@
+.head_logo{
+    backgroud-color: grey
+    display: flex;
+    gap: 3vw;
+}
+
+.part_head{
+    font: aqua;
+}

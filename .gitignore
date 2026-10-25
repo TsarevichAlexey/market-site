@@ -11,3 +11,5 @@ products/
 db.sqlite3
 media/
 debug.log
+
+main/migrations
